@@ -33,26 +33,26 @@ namespace Unicorn.ARM
 
         void IRegisterTable.Read(Register register, out uint value)
         {
-            this.CheckDisposed();
-            CheckSuccess(Native.uc_reg_read(this.Handle, (int)register, out value));
+            ThrowOnDisposed(this);
+            ThrowOnError(Native.uc_reg_read(this.Handle, (int)register, out value));
         }
 
         void IRegisterTable.Read(Register register, out double value)
         {
-            this.CheckDisposed();
-            CheckSuccess(Native.uc_reg_read(this.Handle, (int)register, out value));
+            ThrowOnDisposed(this);
+            ThrowOnError(Native.uc_reg_read(this.Handle, (int)register, out value));
         }
 
         void IRegisterTable.Write(Register register, ref uint value)
         {
-            this.CheckDisposed();
-            CheckSuccess(Native.uc_reg_write(this.Handle, (int)register, ref value));
+            ThrowOnDisposed(this);
+            ThrowOnError(Native.uc_reg_write(this.Handle, (int)register, ref value));
         }
 
         void IRegisterTable.Write(Register register, ref double value)
         {
-            this.CheckDisposed();
-            CheckSuccess(Native.uc_reg_write(this.Handle, (int)register, ref value));
+            ThrowOnDisposed(this);
+            ThrowOnError(Native.uc_reg_write(this.Handle, (int)register, ref value));
         }
     }
 }

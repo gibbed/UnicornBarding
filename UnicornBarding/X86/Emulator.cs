@@ -75,110 +75,110 @@ namespace Unicorn.X86
 
         void IRegisterTable.Read(Register register, out byte value)
         {
-            this.CheckDisposed();
-            CheckSuccess(Native.uc_reg_read(this.Handle, (int)register, out value));
+            ThrowOnDisposed(this);
+            ThrowOnError(Native.uc_reg_read(this.Handle, (int)register, out value));
         }
 
         void IRegisterTable.Read(Register register, out ushort value)
         {
-            this.CheckDisposed();
-            CheckSuccess(Native.uc_reg_read(this.Handle, (int)register, out value));
+            ThrowOnDisposed(this);
+            ThrowOnError(Native.uc_reg_read(this.Handle, (int)register, out value));
         }
 
         void IRegisterTable.Read(Register register, out uint value)
         {
-            this.CheckDisposed();
-            CheckSuccess(Native.uc_reg_read(this.Handle, (int)register, out value));
+            ThrowOnDisposed(this);
+            ThrowOnError(Native.uc_reg_read(this.Handle, (int)register, out value));
         }
 
         void IRegisterTable.Read(Register register, out ulong value)
         {
-            this.CheckDisposed();
-            CheckSuccess(Native.uc_reg_read(this.Handle, (int)register, out value));
+            ThrowOnDisposed(this);
+            ThrowOnError(Native.uc_reg_read(this.Handle, (int)register, out value));
         }
 
         void IRegisterTable.Read(Register register, out FpRegister value)
         {
-            this.CheckDisposed();
-            CheckSuccess(Native.uc_reg_read(this.Handle, (int)register, out value));
+            ThrowOnDisposed(this);
+            ThrowOnError(Native.uc_reg_read(this.Handle, (int)register, out value));
         }
 
         void IRegisterTable.Read(Register register, out XmmRegister value)
         {
-            this.CheckDisposed();
-            CheckSuccess(Native.uc_reg_read(this.Handle, (int)register, out value));
+            ThrowOnDisposed(this);
+            ThrowOnError(Native.uc_reg_read(this.Handle, (int)register, out value));
         }
 
         void IRegisterTable.Read(Register register, out YmmRegister value)
         {
-            this.CheckDisposed();
-            CheckSuccess(Native.uc_reg_read(this.Handle, (int)register, out value));
+            ThrowOnDisposed(this);
+            ThrowOnError(Native.uc_reg_read(this.Handle, (int)register, out value));
         }
 
         void IRegisterTable.Read(Register register, out MmRegister value)
         {
-            this.CheckDisposed();
-            CheckSuccess(Native.uc_reg_read(this.Handle, (int)register, out value));
+            ThrowOnDisposed(this);
+            ThrowOnError(Native.uc_reg_read(this.Handle, (int)register, out value));
         }
 
         void IRegisterTable.Read(Register register, out MsRegister value)
         {
-            this.CheckDisposed();
-            CheckSuccess(Native.uc_reg_read(this.Handle, (int)register, out value));
+            ThrowOnDisposed(this);
+            ThrowOnError(Native.uc_reg_read(this.Handle, (int)register, out value));
         }
 
         void IRegisterTable.Write(Register register, ref byte value)
         {
-            this.CheckDisposed();
-            CheckSuccess(Native.uc_reg_write(this.Handle, (int)register, ref value));
+            ThrowOnDisposed(this);
+            ThrowOnError(Native.uc_reg_write(this.Handle, (int)register, ref value));
         }
 
         void IRegisterTable.Write(Register register, ref ushort value)
         {
-            this.CheckDisposed();
-            CheckSuccess(Native.uc_reg_write(this.Handle, (int)register, ref value));
+            ThrowOnDisposed(this);
+            ThrowOnError(Native.uc_reg_write(this.Handle, (int)register, ref value));
         }
 
         void IRegisterTable.Write(Register register, ref uint value)
         {
-            this.CheckDisposed();
-            CheckSuccess(Native.uc_reg_write(this.Handle, (int)register, ref value));
+            ThrowOnDisposed(this);
+            ThrowOnError(Native.uc_reg_write(this.Handle, (int)register, ref value));
         }
 
         void IRegisterTable.Write(Register register, ref ulong value)
         {
-            this.CheckDisposed();
-            CheckSuccess(Native.uc_reg_write(this.Handle, (int)register, ref value));
+            ThrowOnDisposed(this);
+            ThrowOnError(Native.uc_reg_write(this.Handle, (int)register, ref value));
         }
 
         void IRegisterTable.Write(Register register, ref FpRegister value)
         {
-            this.CheckDisposed();
-            CheckSuccess(Native.uc_reg_write(this.Handle, (int)register, ref value));
+            ThrowOnDisposed(this);
+            ThrowOnError(Native.uc_reg_write(this.Handle, (int)register, ref value));
         }
 
         void IRegisterTable.Write(Register register, ref XmmRegister value)
         {
-            this.CheckDisposed();
-            CheckSuccess(Native.uc_reg_write(this.Handle, (int)register, ref value));
+            ThrowOnDisposed(this);
+            ThrowOnError(Native.uc_reg_write(this.Handle, (int)register, ref value));
         }
 
         void IRegisterTable.Write(Register register, ref YmmRegister value)
         {
-            this.CheckDisposed();
-            CheckSuccess(Native.uc_reg_write(this.Handle, (int)register, ref value));
+            ThrowOnDisposed(this);
+            ThrowOnError(Native.uc_reg_write(this.Handle, (int)register, ref value));
         }
 
         void IRegisterTable.Write(Register register, ref MmRegister value)
         {
-            this.CheckDisposed();
-            CheckSuccess(Native.uc_reg_write(this.Handle, (int)register, ref value));
+            ThrowOnDisposed(this);
+            ThrowOnError(Native.uc_reg_write(this.Handle, (int)register, ref value));
         }
 
         void IRegisterTable.Write(Register register, ref MsRegister value)
         {
-            this.CheckDisposed();
-            CheckSuccess(Native.uc_reg_write(this.Handle, (int)register, ref value));
+            ThrowOnDisposed(this);
+            ThrowOnError(Native.uc_reg_write(this.Handle, (int)register, ref value));
         }
     }
 }

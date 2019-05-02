@@ -38,7 +38,7 @@ namespace Unicorn
 
         protected BaseEmulator(Architecture architecture, Mode mode)
         {
-            CheckSuccess(Native.uc_open(architecture, mode, out var handle));
+            ThrowOnError(Native.uc_open(architecture, mode, out var handle));
             this.Handle = handle;
             this.Architecture = architecture;
             this.Mode = mode;
@@ -55,16 +55,17 @@ namespace Unicorn
         {
             get
             {
-                this.CheckDisposed();
-                CheckSuccess(Native.uc_query(this.Handle, QueryType.PageSize, out var value));
+                ThrowOnDisposed(this);
+                ThrowOnError(Native.uc_query(this.Handle, QueryType.PageSize, out var value));
                 return (int)value.ToUInt32();
             }
         }
 
         internal Hook AddHook(HookType type, Delegate callback, ulong address, ulong end)
         {
+            ThrowOnDisposed(this);
             var pointer = Marshal.GetFunctionPointerForDelegate(callback);
-            CheckSuccess(Native.uc_hook_add(
+            ThrowOnError(Native.uc_hook_add(
                 this.Handle,
                 out var hookHandle,
                 type,
@@ -79,9 +80,9 @@ namespace Unicorn
 
         internal Hook AddHook(int instruction, Delegate callback, ulong address, ulong end)
         {
-            this.CheckDisposed();
+            ThrowOnDisposed(this);
             var pointer = Marshal.GetFunctionPointerForDelegate(callback);
-            CheckSuccess(Native.uc_hook_add(
+            ThrowOnError(Native.uc_hook_add(
                 this.Handle,
                 out var hookHandle,
                 HookType.Instruction,
@@ -135,57 +136,71 @@ namespace Unicorn
 
         public void Start(ulong begin, ulong until, ulong timeout = 0)
         {
-            CheckSuccess(Native.uc_emu_start(this.Handle, begin, until, timeout, UIntPtr.Zero));
+            ThrowOnDisposed(this);
+            ThrowOnError(Native.uc_emu_start(this.Handle, begin, until, timeout, UIntPtr.Zero));
         }
 
         public void Start(ulong begin, ulong until, ulong timeout, UIntPtr count)
         {
-            CheckSuccess(Native.uc_emu_start(this.Handle, begin, until, timeout, count));
+            ThrowOnDisposed(this);
+            ThrowOnError(Native.uc_emu_start(this.Handle, begin, until, timeout, count));
         }
 
         void IMemoryManager.Map(ulong address, int size, Protection protection)
         {
-            CheckSuccess(Native.uc_mem_map(this.Handle, address, new UIntPtr((uint)size), protection));
+            ThrowOnDisposed(this);
+            ThrowOnError(Native.uc_mem_map(this.Handle, address, new UIntPtr((uint)size), protection));
         }
 
         void IMemoryManager.Unmap(ulong address, int size)
         {
-            CheckSuccess(Native.uc_mem_unmap(this.Handle, address, new UIntPtr((uint)size)));
+            ThrowOnDisposed(this);
+            ThrowOnError(Native.uc_mem_unmap(this.Handle, address, new UIntPtr((uint)size)));
         }
 
         bool IMemoryManager.UnmapSafe(ulong address, int size)
         {
+            ThrowOnDisposed(this);
             return Native.uc_mem_unmap(this.Handle, address, new UIntPtr((uint)size)) == Error.OK;
         }
 
         void IMemoryManager.Protect(ulong address, int size, Protection protection)
         {
-            CheckSuccess(Native.uc_mem_protect(this.Handle, address, new UIntPtr((uint)size), protection));
+            ThrowOnDisposed(this);
+            ThrowOnError(Native.uc_mem_protect(this.Handle, address, new UIntPtr((uint)size), protection));
         }
 
         void IMemoryManager.Write(ulong address, byte[] buffer, int count)
         {
-            CheckSuccess(Native.uc_mem_write(this.Handle, address, buffer, new UIntPtr((uint)count)));
+            ThrowOnDisposed(this);
+            ThrowOnError(Native.uc_mem_write(this.Handle, address, buffer, new UIntPtr((uint)count)));
         }
 
         void IMemoryManager.Read(ulong address, byte[] buffer, int count)
         {
-            CheckSuccess(Native.uc_mem_read(this.Handle, address, buffer, new UIntPtr((uint)count)));
+            ThrowOnDisposed(this);
+            ThrowOnError(Native.uc_mem_read(this.Handle, address, buffer, new UIntPtr((uint)count)));
         }
 
-        protected static void CheckSuccess(Error error)
+        protected static void ThrowOnError(Error error)
         {
-            if (error != Error.OK)
+            if (error == Error.OK)
             {
-                throw new UnicornException(error);
+                return;
             }
+
+            throw new UnicornException(error);
         }
 
-        protected void CheckDisposed()
+        protected static void ThrowOnDisposed(BaseEmulator<TType> self)
         {
-            if (this._IsDisposed == true)
+            if (self != null && self._IsDisposed == false)
             {
+                return;
             }
+
+            var type = self == null ? typeof(BaseEmulator<TType>) : self.GetType();
+            throw new ObjectDisposedException(type.FullName);
         }
 
         public void Dispose()
@@ -203,7 +218,7 @@ namespace Unicorn
 
             if (this.Handle != IntPtr.Zero)
             {
-                CheckSuccess(Native.uc_close(this.Handle));
+                ThrowOnError(Native.uc_close(this.Handle));
             }
 
             this._IsDisposed = true;
