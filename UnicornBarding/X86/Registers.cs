@@ -901,6 +901,94 @@ namespace Unicorn.X86
             set { this.Table.Write(Register.YMM7, ref value); }
         }
 
+        public YmmRegister YMM8
+        {
+            get
+            {
+                this.Table.Read(Register.YMM8, out YmmRegister value);
+                return value;
+            }
+
+            set { this.Table.Write(Register.YMM8, ref value); }
+        }
+
+        public YmmRegister YMM9
+        {
+            get
+            {
+                this.Table.Read(Register.YMM9, out YmmRegister value);
+                return value;
+            }
+
+            set { this.Table.Write(Register.YMM9, ref value); }
+        }
+
+        public YmmRegister YMM10
+        {
+            get
+            {
+                this.Table.Read(Register.YMM10, out YmmRegister value);
+                return value;
+            }
+
+            set { this.Table.Write(Register.YMM10, ref value); }
+        }
+
+        public YmmRegister YMM11
+        {
+            get
+            {
+                this.Table.Read(Register.YMM11, out YmmRegister value);
+                return value;
+            }
+
+            set { this.Table.Write(Register.YMM11, ref value); }
+        }
+
+        public YmmRegister YMM12
+        {
+            get
+            {
+                this.Table.Read(Register.YMM12, out YmmRegister value);
+                return value;
+            }
+
+            set { this.Table.Write(Register.YMM12, ref value); }
+        }
+
+        public YmmRegister YMM13
+        {
+            get
+            {
+                this.Table.Read(Register.YMM13, out YmmRegister value);
+                return value;
+            }
+
+            set { this.Table.Write(Register.YMM13, ref value); }
+        }
+
+        public YmmRegister YMM14
+        {
+            get
+            {
+                this.Table.Read(Register.YMM14, out YmmRegister value);
+                return value;
+            }
+
+            set { this.Table.Write(Register.YMM4, ref value); }
+        }
+
+        public YmmRegister YMM15
+        {
+            get
+            {
+                this.Table.Read(Register.YMM15, out YmmRegister value);
+                return value;
+            }
+
+            set { this.Table.Write(Register.YMM15, ref value); }
+        }
+
         public byte R8B
         {
             get

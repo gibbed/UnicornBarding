@@ -332,29 +332,13 @@ namespace Unicorn.X86
         YMM5,
         YMM6,
         YMM7,
-
-        [Obsolete]
         YMM8,
-
-        [Obsolete]
         YMM9,
-
-        [Obsolete]
         YMM10,
-
-        [Obsolete]
         YMM11,
-
-        [Obsolete]
         YMM12,
-
-        [Obsolete]
         YMM13,
-
-        [Obsolete]
         YMM14,
-
-        [Obsolete]
         YMM15,
 
         [Obsolete]
