@@ -532,5 +532,6 @@ namespace Unicorn.X86
         FPCW,
         FPTAG,
         MSR, // Model-Specific Register
+        MXCSR,
     }
 }

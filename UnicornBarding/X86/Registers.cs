@@ -1241,5 +1241,16 @@ namespace Unicorn.X86
 
             set { this.Table.Write(Register.MSR, ref value); }
         }
+
+        public uint MXCSR
+        {
+            get
+            {
+                this.Table.Read(Register.MXCSR, out uint value);
+                return value;
+            }
+
+            set { this.Table.Write(Register.MXCSR, ref value); }
+        }
     }
 }
