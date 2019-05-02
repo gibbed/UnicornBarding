@@ -626,6 +626,50 @@ namespace Unicorn.ARM
             set { this.Table.Write(Register.C13_C0_3, ref value); }
         }
 
+        public uint IPSR
+        {
+            get
+            {
+                this.Table.Read(Register.IPSR, out uint value);
+                return value;
+            }
+
+            set { this.Table.Write(Register.IPSR, ref value); }
+        }
+
+        public uint MSP
+        {
+            get
+            {
+                this.Table.Read(Register.MSP, out uint value);
+                return value;
+            }
+
+            set { this.Table.Write(Register.MSP, ref value); }
+        }
+
+        public uint PSP
+        {
+            get
+            {
+                this.Table.Read(Register.PSP, out uint value);
+                return value;
+            }
+
+            set { this.Table.Write(Register.PSP, ref value); }
+        }
+
+        public uint CONTROL
+        {
+            get
+            {
+                this.Table.Read(Register.CONTROL, out uint value);
+                return value;
+            }
+
+            set { this.Table.Write(Register.CONTROL, ref value); }
+        }
+
         public uint R13
         {
             get

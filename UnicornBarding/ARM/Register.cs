@@ -139,6 +139,11 @@ namespace Unicorn.ARM
         C13_C0_2,
         C13_C0_3,
 
+        IPSR,
+        MSP,
+        PSP,
+        CONTROL,
+
         // alias registers
         R13 = SP,
         R14 = LR,
