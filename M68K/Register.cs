@@ -24,7 +24,6 @@ namespace Unicorn.M68K
     internal enum Register : int
     {
         Invalid = 0,
-        // ReSharper disable InconsistentNaming
         A0,
         A1,
         A2,
@@ -45,6 +44,5 @@ namespace Unicorn.M68K
 
         SR,
         PC,
-        // ReSharper restore InconsistentNaming
     }
 }

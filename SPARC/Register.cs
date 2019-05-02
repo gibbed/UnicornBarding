@@ -24,7 +24,6 @@ namespace Unicorn.SPARC
     internal enum Register : int
     {
         Invalid = 0,
-        // ReSharper disable InconsistentNaming
         F0,
         F1,
         F2,
@@ -121,7 +120,5 @@ namespace Unicorn.SPARC
         // extras
         O6 = SP,
         I6 = FP,
-
-        // ReSharper restore InconsistentNaming
     }
 }

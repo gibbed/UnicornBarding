@@ -29,21 +29,14 @@ namespace Unicorn.X86
 
         internal Registers(IRegisterTable table)
         {
-            if (table == null)
-            {
-                throw new ArgumentNullException("table");
-            }
-
-            this.Table = table;
+            this.Table = table ?? throw new ArgumentNullException("table");
         }
 
-        // ReSharper disable InconsistentNaming
         public byte AH
         {
             get
             {
-                byte value;
-                this.Table.Read(Register.AH, out value);
+                this.Table.Read(Register.AH, out byte value);
                 return value;
             }
 
@@ -54,8 +47,7 @@ namespace Unicorn.X86
         {
             get
             {
-                byte value;
-                this.Table.Read(Register.AL, out value);
+                this.Table.Read(Register.AL, out byte value);
                 return value;
             }
 
@@ -66,8 +58,7 @@ namespace Unicorn.X86
         {
             get
             {
-                ushort value;
-                this.Table.Read(Register.AX, out value);
+                this.Table.Read(Register.AX, out ushort value);
                 return value;
             }
 
@@ -78,8 +69,7 @@ namespace Unicorn.X86
         {
             get
             {
-                byte value;
-                this.Table.Read(Register.BH, out value);
+                this.Table.Read(Register.BH, out byte value);
                 return value;
             }
 
@@ -90,8 +80,7 @@ namespace Unicorn.X86
         {
             get
             {
-                byte value;
-                this.Table.Read(Register.BL, out value);
+                this.Table.Read(Register.BL, out byte value);
                 return value;
             }
 
@@ -102,8 +91,7 @@ namespace Unicorn.X86
         {
             get
             {
-                ushort value;
-                this.Table.Read(Register.BP, out value);
+                this.Table.Read(Register.BP, out ushort value);
                 return value;
             }
 
@@ -114,8 +102,7 @@ namespace Unicorn.X86
         {
             get
             {
-                byte value;
-                this.Table.Read(Register.BPL, out value);
+                this.Table.Read(Register.BPL, out byte value);
                 return value;
             }
 
@@ -126,8 +113,7 @@ namespace Unicorn.X86
         {
             get
             {
-                ushort value;
-                this.Table.Read(Register.BX, out value);
+                this.Table.Read(Register.BX, out ushort value);
                 return value;
             }
 
@@ -138,8 +124,7 @@ namespace Unicorn.X86
         {
             get
             {
-                byte value;
-                this.Table.Read(Register.CH, out value);
+                this.Table.Read(Register.CH, out byte value);
                 return value;
             }
 
@@ -150,8 +135,7 @@ namespace Unicorn.X86
         {
             get
             {
-                byte value;
-                this.Table.Read(Register.CL, out value);
+                this.Table.Read(Register.CL, out byte value);
                 return value;
             }
 
@@ -162,8 +146,7 @@ namespace Unicorn.X86
         {
             get
             {
-                ushort value;
-                this.Table.Read(Register.CS, out value);
+                this.Table.Read(Register.CS, out ushort value);
                 return value;
             }
 
@@ -174,8 +157,7 @@ namespace Unicorn.X86
         {
             get
             {
-                ushort value;
-                this.Table.Read(Register.CX, out value);
+                this.Table.Read(Register.CX, out ushort value);
                 return value;
             }
 
@@ -186,8 +168,7 @@ namespace Unicorn.X86
         {
             get
             {
-                byte value;
-                this.Table.Read(Register.DH, out value);
+                this.Table.Read(Register.DH, out byte value);
                 return value;
             }
 
@@ -198,8 +179,7 @@ namespace Unicorn.X86
         {
             get
             {
-                ushort value;
-                this.Table.Read(Register.DI, out value);
+                this.Table.Read(Register.DI, out ushort value);
                 return value;
             }
 
@@ -210,8 +190,7 @@ namespace Unicorn.X86
         {
             get
             {
-                ushort value;
-                this.Table.Read(Register.DIL, out value);
+                this.Table.Read(Register.DIL, out ushort value);
                 return value;
             }
 
@@ -222,8 +201,7 @@ namespace Unicorn.X86
         {
             get
             {
-                ushort value;
-                this.Table.Read(Register.DL, out value);
+                this.Table.Read(Register.DL, out ushort value);
                 return value;
             }
 
@@ -234,8 +212,7 @@ namespace Unicorn.X86
         {
             get
             {
-                ushort value;
-                this.Table.Read(Register.DS, out value);
+                this.Table.Read(Register.DS, out ushort value);
                 return value;
             }
 
@@ -246,8 +223,7 @@ namespace Unicorn.X86
         {
             get
             {
-                ushort value;
-                this.Table.Read(Register.DX, out value);
+                this.Table.Read(Register.DX, out ushort value);
                 return value;
             }
 
@@ -258,8 +234,7 @@ namespace Unicorn.X86
         {
             get
             {
-                uint value;
-                this.Table.Read(Register.EAX, out value);
+                this.Table.Read(Register.EAX, out uint value);
                 return value;
             }
 
@@ -270,8 +245,7 @@ namespace Unicorn.X86
         {
             get
             {
-                uint value;
-                this.Table.Read(Register.EBP, out value);
+                this.Table.Read(Register.EBP, out uint value);
                 return value;
             }
 
@@ -282,8 +256,7 @@ namespace Unicorn.X86
         {
             get
             {
-                uint value;
-                this.Table.Read(Register.EBX, out value);
+                this.Table.Read(Register.EBX, out uint value);
                 return value;
             }
 
@@ -294,8 +267,7 @@ namespace Unicorn.X86
         {
             get
             {
-                uint value;
-                this.Table.Read(Register.ECX, out value);
+                this.Table.Read(Register.ECX, out uint value);
                 return value;
             }
 
@@ -306,8 +278,7 @@ namespace Unicorn.X86
         {
             get
             {
-                uint value;
-                this.Table.Read(Register.EDI, out value);
+                this.Table.Read(Register.EDI, out uint value);
                 return value;
             }
 
@@ -318,8 +289,7 @@ namespace Unicorn.X86
         {
             get
             {
-                uint value;
-                this.Table.Read(Register.EDX, out value);
+                this.Table.Read(Register.EDX, out uint value);
                 return value;
             }
 
@@ -330,8 +300,7 @@ namespace Unicorn.X86
         {
             get
             {
-                uint value;
-                this.Table.Read(Register.EFLAGS, out value);
+                this.Table.Read(Register.EFLAGS, out uint value);
                 return value;
             }
 
@@ -342,8 +311,7 @@ namespace Unicorn.X86
         {
             get
             {
-                uint value;
-                this.Table.Read(Register.EIP, out value);
+                this.Table.Read(Register.EIP, out uint value);
                 return value;
             }
 
@@ -354,8 +322,7 @@ namespace Unicorn.X86
         {
             get
             {
-                ushort value;
-                this.Table.Read(Register.ES, out value);
+                this.Table.Read(Register.ES, out ushort value);
                 return value;
             }
 
@@ -366,8 +333,7 @@ namespace Unicorn.X86
         {
             get
             {
-                uint value;
-                this.Table.Read(Register.ESI, out value);
+                this.Table.Read(Register.ESI, out uint value);
                 return value;
             }
 
@@ -378,8 +344,7 @@ namespace Unicorn.X86
         {
             get
             {
-                uint value;
-                this.Table.Read(Register.ESP, out value);
+                this.Table.Read(Register.ESP, out uint value);
                 return value;
             }
 
@@ -390,8 +355,7 @@ namespace Unicorn.X86
         {
             get
             {
-                ushort value;
-                this.Table.Read(Register.FPSW, out value);
+                this.Table.Read(Register.FPSW, out ushort value);
                 return value;
             }
 
@@ -402,8 +366,7 @@ namespace Unicorn.X86
         {
             get
             {
-                ushort value;
-                this.Table.Read(Register.FS, out value);
+                this.Table.Read(Register.FS, out ushort value);
                 return value;
             }
 
@@ -414,8 +377,7 @@ namespace Unicorn.X86
         {
             get
             {
-                ushort value;
-                this.Table.Read(Register.GS, out value);
+                this.Table.Read(Register.GS, out ushort value);
                 return value;
             }
 
@@ -426,8 +388,7 @@ namespace Unicorn.X86
         {
             get
             {
-                ushort value;
-                this.Table.Read(Register.IP, out value);
+                this.Table.Read(Register.IP, out ushort value);
                 return value;
             }
 
@@ -438,8 +399,7 @@ namespace Unicorn.X86
         {
             get
             {
-                ulong value;
-                this.Table.Read(Register.RAX, out value);
+                this.Table.Read(Register.RAX, out ulong value);
                 return value;
             }
 
@@ -450,8 +410,7 @@ namespace Unicorn.X86
         {
             get
             {
-                ulong value;
-                this.Table.Read(Register.RBP, out value);
+                this.Table.Read(Register.RBP, out ulong value);
                 return value;
             }
 
@@ -462,8 +421,7 @@ namespace Unicorn.X86
         {
             get
             {
-                ulong value;
-                this.Table.Read(Register.RBX, out value);
+                this.Table.Read(Register.RBX, out ulong value);
                 return value;
             }
 
@@ -474,8 +432,7 @@ namespace Unicorn.X86
         {
             get
             {
-                ulong value;
-                this.Table.Read(Register.RCX, out value);
+                this.Table.Read(Register.RCX, out ulong value);
                 return value;
             }
 
@@ -486,8 +443,7 @@ namespace Unicorn.X86
         {
             get
             {
-                ulong value;
-                this.Table.Read(Register.RDI, out value);
+                this.Table.Read(Register.RDI, out ulong value);
                 return value;
             }
 
@@ -498,8 +454,7 @@ namespace Unicorn.X86
         {
             get
             {
-                ulong value;
-                this.Table.Read(Register.RDX, out value);
+                this.Table.Read(Register.RDX, out ulong value);
                 return value;
             }
 
@@ -510,8 +465,7 @@ namespace Unicorn.X86
         {
             get
             {
-                ulong value;
-                this.Table.Read(Register.RIP, out value);
+                this.Table.Read(Register.RIP, out ulong value);
                 return value;
             }
 
@@ -522,8 +476,7 @@ namespace Unicorn.X86
         {
             get
             {
-                ulong value;
-                this.Table.Read(Register.RSI, out value);
+                this.Table.Read(Register.RSI, out ulong value);
                 return value;
             }
 
@@ -534,8 +487,7 @@ namespace Unicorn.X86
         {
             get
             {
-                ulong value;
-                this.Table.Read(Register.RSP, out value);
+                this.Table.Read(Register.RSP, out ulong value);
                 return value;
             }
 
@@ -546,8 +498,7 @@ namespace Unicorn.X86
         {
             get
             {
-                ushort value;
-                this.Table.Read(Register.SI, out value);
+                this.Table.Read(Register.SI, out ushort value);
                 return value;
             }
 
@@ -558,8 +509,7 @@ namespace Unicorn.X86
         {
             get
             {
-                byte value;
-                this.Table.Read(Register.SIL, out value);
+                this.Table.Read(Register.SIL, out byte value);
                 return value;
             }
 
@@ -570,8 +520,7 @@ namespace Unicorn.X86
         {
             get
             {
-                ushort value;
-                this.Table.Read(Register.SP, out value);
+                this.Table.Read(Register.SP, out ushort value);
                 return value;
             }
 
@@ -582,8 +531,7 @@ namespace Unicorn.X86
         {
             get
             {
-                byte value;
-                this.Table.Read(Register.SPL, out value);
+                this.Table.Read(Register.SPL, out byte value);
                 return value;
             }
 
@@ -594,8 +542,7 @@ namespace Unicorn.X86
         {
             get
             {
-                ushort value;
-                this.Table.Read(Register.SS, out value);
+                this.Table.Read(Register.SS, out ushort value);
                 return value;
             }
 
@@ -606,8 +553,7 @@ namespace Unicorn.X86
         {
             get
             {
-                FpRegister value;
-                this.Table.Read(Register.FP0, out value);
+                this.Table.Read(Register.FP0, out FpRegister value);
                 return value;
             }
 
@@ -618,8 +564,7 @@ namespace Unicorn.X86
         {
             get
             {
-                FpRegister value;
-                this.Table.Read(Register.FP1, out value);
+                this.Table.Read(Register.FP1, out FpRegister value);
                 return value;
             }
 
@@ -630,8 +575,7 @@ namespace Unicorn.X86
         {
             get
             {
-                FpRegister value;
-                this.Table.Read(Register.FP2, out value);
+                this.Table.Read(Register.FP2, out FpRegister value);
                 return value;
             }
 
@@ -642,8 +586,7 @@ namespace Unicorn.X86
         {
             get
             {
-                FpRegister value;
-                this.Table.Read(Register.FP3, out value);
+                this.Table.Read(Register.FP3, out FpRegister value);
                 return value;
             }
 
@@ -654,8 +597,7 @@ namespace Unicorn.X86
         {
             get
             {
-                FpRegister value;
-                this.Table.Read(Register.FP4, out value);
+                this.Table.Read(Register.FP4, out FpRegister value);
                 return value;
             }
 
@@ -666,8 +608,7 @@ namespace Unicorn.X86
         {
             get
             {
-                FpRegister value;
-                this.Table.Read(Register.FP5, out value);
+                this.Table.Read(Register.FP5, out FpRegister value);
                 return value;
             }
 
@@ -678,8 +619,7 @@ namespace Unicorn.X86
         {
             get
             {
-                FpRegister value;
-                this.Table.Read(Register.FP6, out value);
+                this.Table.Read(Register.FP6, out FpRegister value);
                 return value;
             }
 
@@ -690,8 +630,7 @@ namespace Unicorn.X86
         {
             get
             {
-                FpRegister value;
-                this.Table.Read(Register.FP7, out value);
+                this.Table.Read(Register.FP7, out FpRegister value);
                 return value;
             }
 
@@ -702,8 +641,7 @@ namespace Unicorn.X86
         {
             get
             {
-                ulong value;
-                this.Table.Read(Register.R8, out value);
+                this.Table.Read(Register.R8, out ulong value);
                 return value;
             }
 
@@ -714,8 +652,7 @@ namespace Unicorn.X86
         {
             get
             {
-                ulong value;
-                this.Table.Read(Register.R9, out value);
+                this.Table.Read(Register.R9, out ulong value);
                 return value;
             }
 
@@ -726,8 +663,7 @@ namespace Unicorn.X86
         {
             get
             {
-                ulong value;
-                this.Table.Read(Register.R10, out value);
+                this.Table.Read(Register.R10, out ulong value);
                 return value;
             }
 
@@ -738,8 +674,7 @@ namespace Unicorn.X86
         {
             get
             {
-                ulong value;
-                this.Table.Read(Register.R11, out value);
+                this.Table.Read(Register.R11, out ulong value);
                 return value;
             }
 
@@ -750,8 +685,7 @@ namespace Unicorn.X86
         {
             get
             {
-                ulong value;
-                this.Table.Read(Register.R12, out value);
+                this.Table.Read(Register.R12, out ulong value);
                 return value;
             }
 
@@ -762,8 +696,7 @@ namespace Unicorn.X86
         {
             get
             {
-                ulong value;
-                this.Table.Read(Register.R13, out value);
+                this.Table.Read(Register.R13, out ulong value);
                 return value;
             }
 
@@ -774,8 +707,7 @@ namespace Unicorn.X86
         {
             get
             {
-                ulong value;
-                this.Table.Read(Register.R14, out value);
+                this.Table.Read(Register.R14, out ulong value);
                 return value;
             }
 
@@ -786,8 +718,7 @@ namespace Unicorn.X86
         {
             get
             {
-                ulong value;
-                this.Table.Read(Register.R15, out value);
+                this.Table.Read(Register.R15, out ulong value);
                 return value;
             }
 
@@ -798,8 +729,7 @@ namespace Unicorn.X86
         {
             get
             {
-                XmmRegister value;
-                this.Table.Read(Register.XMM0, out value);
+                this.Table.Read(Register.XMM0, out XmmRegister value);
                 return value;
             }
 
@@ -810,8 +740,7 @@ namespace Unicorn.X86
         {
             get
             {
-                XmmRegister value;
-                this.Table.Read(Register.XMM1, out value);
+                this.Table.Read(Register.XMM1, out XmmRegister value);
                 return value;
             }
 
@@ -822,8 +751,7 @@ namespace Unicorn.X86
         {
             get
             {
-                XmmRegister value;
-                this.Table.Read(Register.XMM2, out value);
+                this.Table.Read(Register.XMM2, out XmmRegister value);
                 return value;
             }
 
@@ -834,8 +762,7 @@ namespace Unicorn.X86
         {
             get
             {
-                XmmRegister value;
-                this.Table.Read(Register.XMM3, out value);
+                this.Table.Read(Register.XMM3, out XmmRegister value);
                 return value;
             }
 
@@ -846,8 +773,7 @@ namespace Unicorn.X86
         {
             get
             {
-                XmmRegister value;
-                this.Table.Read(Register.XMM4, out value);
+                this.Table.Read(Register.XMM4, out XmmRegister value);
                 return value;
             }
 
@@ -858,8 +784,7 @@ namespace Unicorn.X86
         {
             get
             {
-                XmmRegister value;
-                this.Table.Read(Register.XMM5, out value);
+                this.Table.Read(Register.XMM5, out XmmRegister value);
                 return value;
             }
 
@@ -870,8 +795,7 @@ namespace Unicorn.X86
         {
             get
             {
-                XmmRegister value;
-                this.Table.Read(Register.XMM6, out value);
+                this.Table.Read(Register.XMM6, out XmmRegister value);
                 return value;
             }
 
@@ -882,8 +806,7 @@ namespace Unicorn.X86
         {
             get
             {
-                XmmRegister value;
-                this.Table.Read(Register.XMM7, out value);
+                this.Table.Read(Register.XMM7, out XmmRegister value);
                 return value;
             }
 
@@ -894,8 +817,7 @@ namespace Unicorn.X86
         {
             get
             {
-                YmmRegister value;
-                this.Table.Read(Register.YMM0, out value);
+                this.Table.Read(Register.YMM0, out YmmRegister value);
                 return value;
             }
 
@@ -906,8 +828,7 @@ namespace Unicorn.X86
         {
             get
             {
-                YmmRegister value;
-                this.Table.Read(Register.YMM1, out value);
+                this.Table.Read(Register.YMM1, out YmmRegister value);
                 return value;
             }
 
@@ -918,8 +839,7 @@ namespace Unicorn.X86
         {
             get
             {
-                YmmRegister value;
-                this.Table.Read(Register.YMM2, out value);
+                this.Table.Read(Register.YMM2, out YmmRegister value);
                 return value;
             }
 
@@ -930,8 +850,7 @@ namespace Unicorn.X86
         {
             get
             {
-                YmmRegister value;
-                this.Table.Read(Register.YMM3, out value);
+                this.Table.Read(Register.YMM3, out YmmRegister value);
                 return value;
             }
 
@@ -942,8 +861,7 @@ namespace Unicorn.X86
         {
             get
             {
-                YmmRegister value;
-                this.Table.Read(Register.YMM4, out value);
+                this.Table.Read(Register.YMM4, out YmmRegister value);
                 return value;
             }
 
@@ -954,8 +872,7 @@ namespace Unicorn.X86
         {
             get
             {
-                YmmRegister value;
-                this.Table.Read(Register.YMM5, out value);
+                this.Table.Read(Register.YMM5, out YmmRegister value);
                 return value;
             }
 
@@ -966,8 +883,7 @@ namespace Unicorn.X86
         {
             get
             {
-                YmmRegister value;
-                this.Table.Read(Register.YMM6, out value);
+                this.Table.Read(Register.YMM6, out YmmRegister value);
                 return value;
             }
 
@@ -978,8 +894,7 @@ namespace Unicorn.X86
         {
             get
             {
-                YmmRegister value;
-                this.Table.Read(Register.YMM7, out value);
+                this.Table.Read(Register.YMM7, out YmmRegister value);
                 return value;
             }
 
@@ -990,8 +905,7 @@ namespace Unicorn.X86
         {
             get
             {
-                byte value;
-                this.Table.Read(Register.R8B, out value);
+                this.Table.Read(Register.R8B, out byte value);
                 return value;
             }
 
@@ -1002,8 +916,7 @@ namespace Unicorn.X86
         {
             get
             {
-                byte value;
-                this.Table.Read(Register.R9B, out value);
+                this.Table.Read(Register.R9B, out byte value);
                 return value;
             }
 
@@ -1014,8 +927,7 @@ namespace Unicorn.X86
         {
             get
             {
-                byte value;
-                this.Table.Read(Register.R10B, out value);
+                this.Table.Read(Register.R10B, out byte value);
                 return value;
             }
 
@@ -1026,8 +938,7 @@ namespace Unicorn.X86
         {
             get
             {
-                byte value;
-                this.Table.Read(Register.R11B, out value);
+                this.Table.Read(Register.R11B, out byte value);
                 return value;
             }
 
@@ -1038,8 +949,7 @@ namespace Unicorn.X86
         {
             get
             {
-                byte value;
-                this.Table.Read(Register.R12B, out value);
+                this.Table.Read(Register.R12B, out byte value);
                 return value;
             }
 
@@ -1050,8 +960,7 @@ namespace Unicorn.X86
         {
             get
             {
-                byte value;
-                this.Table.Read(Register.R13B, out value);
+                this.Table.Read(Register.R13B, out byte value);
                 return value;
             }
 
@@ -1062,8 +971,7 @@ namespace Unicorn.X86
         {
             get
             {
-                byte value;
-                this.Table.Read(Register.R14B, out value);
+                this.Table.Read(Register.R14B, out byte value);
                 return value;
             }
 
@@ -1074,8 +982,7 @@ namespace Unicorn.X86
         {
             get
             {
-                byte value;
-                this.Table.Read(Register.R15B, out value);
+                this.Table.Read(Register.R15B, out byte value);
                 return value;
             }
 
@@ -1086,8 +993,7 @@ namespace Unicorn.X86
         {
             get
             {
-                uint value;
-                this.Table.Read(Register.R8D, out value);
+                this.Table.Read(Register.R8D, out uint value);
                 return value;
             }
 
@@ -1098,8 +1004,7 @@ namespace Unicorn.X86
         {
             get
             {
-                uint value;
-                this.Table.Read(Register.R9D, out value);
+                this.Table.Read(Register.R9D, out uint value);
                 return value;
             }
 
@@ -1110,8 +1015,7 @@ namespace Unicorn.X86
         {
             get
             {
-                uint value;
-                this.Table.Read(Register.R10D, out value);
+                this.Table.Read(Register.R10D, out uint value);
                 return value;
             }
 
@@ -1122,8 +1026,7 @@ namespace Unicorn.X86
         {
             get
             {
-                uint value;
-                this.Table.Read(Register.R11D, out value);
+                this.Table.Read(Register.R11D, out uint value);
                 return value;
             }
 
@@ -1134,8 +1037,7 @@ namespace Unicorn.X86
         {
             get
             {
-                uint value;
-                this.Table.Read(Register.R12D, out value);
+                this.Table.Read(Register.R12D, out uint value);
                 return value;
             }
 
@@ -1146,8 +1048,7 @@ namespace Unicorn.X86
         {
             get
             {
-                uint value;
-                this.Table.Read(Register.R13D, out value);
+                this.Table.Read(Register.R13D, out uint value);
                 return value;
             }
 
@@ -1158,8 +1059,7 @@ namespace Unicorn.X86
         {
             get
             {
-                uint value;
-                this.Table.Read(Register.R14D, out value);
+                this.Table.Read(Register.R14D, out uint value);
                 return value;
             }
 
@@ -1170,8 +1070,7 @@ namespace Unicorn.X86
         {
             get
             {
-                uint value;
-                this.Table.Read(Register.R15D, out value);
+                this.Table.Read(Register.R15D, out uint value);
                 return value;
             }
 
@@ -1182,8 +1081,7 @@ namespace Unicorn.X86
         {
             get
             {
-                ushort value;
-                this.Table.Read(Register.R8W, out value);
+                this.Table.Read(Register.R8W, out ushort value);
                 return value;
             }
 
@@ -1194,8 +1092,7 @@ namespace Unicorn.X86
         {
             get
             {
-                ushort value;
-                this.Table.Read(Register.R9W, out value);
+                this.Table.Read(Register.R9W, out ushort value);
                 return value;
             }
 
@@ -1206,8 +1103,7 @@ namespace Unicorn.X86
         {
             get
             {
-                ushort value;
-                this.Table.Read(Register.R10W, out value);
+                this.Table.Read(Register.R10W, out ushort value);
                 return value;
             }
 
@@ -1218,8 +1114,7 @@ namespace Unicorn.X86
         {
             get
             {
-                ushort value;
-                this.Table.Read(Register.R11W, out value);
+                this.Table.Read(Register.R11W, out ushort value);
                 return value;
             }
 
@@ -1230,8 +1125,7 @@ namespace Unicorn.X86
         {
             get
             {
-                ushort value;
-                this.Table.Read(Register.R12W, out value);
+                this.Table.Read(Register.R12W, out ushort value);
                 return value;
             }
 
@@ -1242,8 +1136,7 @@ namespace Unicorn.X86
         {
             get
             {
-                ushort value;
-                this.Table.Read(Register.R13W, out value);
+                this.Table.Read(Register.R13W, out ushort value);
                 return value;
             }
 
@@ -1254,8 +1147,7 @@ namespace Unicorn.X86
         {
             get
             {
-                ushort value;
-                this.Table.Read(Register.R14W, out value);
+                this.Table.Read(Register.R14W, out ushort value);
                 return value;
             }
 
@@ -1266,8 +1158,7 @@ namespace Unicorn.X86
         {
             get
             {
-                ushort value;
-                this.Table.Read(Register.R15W, out value);
+                this.Table.Read(Register.R15W, out ushort value);
                 return value;
             }
 
@@ -1278,8 +1169,7 @@ namespace Unicorn.X86
         {
             get
             {
-                MmRegister value;
-                this.Table.Read(Register.IDTR, out value);
+                this.Table.Read(Register.IDTR, out MmRegister value);
                 return value;
             }
 
@@ -1290,8 +1180,7 @@ namespace Unicorn.X86
         {
             get
             {
-                MmRegister value;
-                this.Table.Read(Register.GDTR, out value);
+                this.Table.Read(Register.GDTR, out MmRegister value);
                 return value;
             }
 
@@ -1302,8 +1191,7 @@ namespace Unicorn.X86
         {
             get
             {
-                MmRegister value;
-                this.Table.Read(Register.LDTR, out value);
+                this.Table.Read(Register.LDTR, out MmRegister value);
                 return value;
             }
 
@@ -1314,8 +1202,7 @@ namespace Unicorn.X86
         {
             get
             {
-                MmRegister value;
-                this.Table.Read(Register.TR, out value);
+                this.Table.Read(Register.TR, out MmRegister value);
                 return value;
             }
 
@@ -1326,8 +1213,7 @@ namespace Unicorn.X86
         {
             get
             {
-                ushort value;
-                this.Table.Read(Register.FPCW, out value);
+                this.Table.Read(Register.FPCW, out ushort value);
                 return value;
             }
 
@@ -1338,8 +1224,7 @@ namespace Unicorn.X86
         {
             get
             {
-                ushort value;
-                this.Table.Read(Register.FPTAG, out value);
+                this.Table.Read(Register.FPTAG, out ushort value);
                 return value;
             }
 
@@ -1350,13 +1235,11 @@ namespace Unicorn.X86
         {
             get
             {
-                MsRegister value;
-                this.Table.Read(Register.MSR, out value);
+                this.Table.Read(Register.MSR, out MsRegister value);
                 return value;
             }
 
             set { this.Table.Write(Register.MSR, ref value); }
         }
-        // ReSharper restore InconsistentNaming
     }
 }

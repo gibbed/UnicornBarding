@@ -24,7 +24,7 @@ namespace Unicorn.MIPS
     internal enum Register : int
     {
         Invalid = 0,
-        // ReSharper disable InconsistentNaming
+
         //> General purpose registers
         PC,
 
@@ -222,6 +222,5 @@ namespace Unicorn.MIPS
         LO1 = HI1,
         LO2 = HI2,
         LO3 = HI3,
-        // ReSharper restore InconsistentNaming
     }
 }

@@ -24,7 +24,6 @@ namespace Unicorn.ARM
     internal enum Register : int
     {
         Invalid = 0,
-        // ReSharper disable InconsistentNaming
         APSR,
         APSR_NZCV,
         CPSR,
@@ -149,6 +148,5 @@ namespace Unicorn.ARM
         SL = R10,
         FP = R11,
         IP = R12,
-        // ReSharper restore InconsistentNaming
     }
 }

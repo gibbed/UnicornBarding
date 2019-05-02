@@ -24,8 +24,6 @@ namespace Unicorn.X86
     public enum Instruction
     {
         Invalid = 0,
-
-        // ReSharper disable InconsistentNaming
         AAA,
         AAD,
         AAM,
@@ -1363,6 +1361,5 @@ namespace Unicorn.X86
         XTEST,
         FDISI8087_NOP,
         FENI8087_NOP,
-        // ReSharper restore InconsistentNaming
     }
 }

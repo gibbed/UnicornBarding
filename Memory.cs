@@ -29,12 +29,7 @@ namespace Unicorn
 
         internal Memory(IMemoryManager manager)
         {
-            if (manager == null)
-            {
-                throw new ArgumentNullException("manager");
-            }
-
-            this._Manager = manager;
+            this._Manager = manager ?? throw new ArgumentNullException("manager");
         }
 
         public void Map(ulong address, int size, Protection protection)

@@ -23,7 +23,6 @@ namespace Unicorn
 {
     public enum Architecture
     {
-        // ReSharper disable InconsistentNaming
         ARM = 1, // ARM architecture (including Thumb, Thumb-2)
         ARM64, // ARM-64, also called AArch64
         MIPS, // Mips architecture
@@ -31,6 +30,5 @@ namespace Unicorn
         PPC, // PowerPC architecture (currently unsupported)
         SPARC, // Sparc architecture
         M68K, // M68K architecture
-        // ReSharper restore InconsistentNaming
     }
 }

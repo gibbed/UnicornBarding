@@ -29,21 +29,14 @@ namespace Unicorn.ARM
 
         internal Registers(IRegisterTable table)
         {
-            if (table == null)
-            {
-                throw new ArgumentNullException("table");
-            }
-
-            this.Table = table;
+            this.Table = table ?? throw new ArgumentNullException("table");
         }
 
-        // ReSharper disable InconsistentNaming
         public uint APSR
         {
             get
             {
-                uint value;
-                this.Table.Read(Register.APSR, out value);
+                this.Table.Read(Register.APSR, out uint value);
                 return value;
             }
 
@@ -54,8 +47,7 @@ namespace Unicorn.ARM
         {
             get
             {
-                uint value;
-                this.Table.Read(Register.CPSR, out value);
+                this.Table.Read(Register.CPSR, out uint value);
                 return value;
             }
 
@@ -66,8 +58,7 @@ namespace Unicorn.ARM
         {
             get
             {
-                uint value;
-                this.Table.Read(Register.FPEXC, out value);
+                this.Table.Read(Register.FPEXC, out uint value);
                 return value;
             }
 
@@ -78,8 +69,7 @@ namespace Unicorn.ARM
         {
             get
             {
-                uint value;
-                this.Table.Read(Register.LR, out value);
+                this.Table.Read(Register.LR, out uint value);
                 return value;
             }
 
@@ -90,8 +80,7 @@ namespace Unicorn.ARM
         {
             get
             {
-                uint value;
-                this.Table.Read(Register.PC, out value);
+                this.Table.Read(Register.PC, out uint value);
                 return value;
             }
 
@@ -102,8 +91,7 @@ namespace Unicorn.ARM
         {
             get
             {
-                uint value;
-                this.Table.Read(Register.SP, out value);
+                this.Table.Read(Register.SP, out uint value);
                 return value;
             }
 
@@ -114,8 +102,7 @@ namespace Unicorn.ARM
         {
             get
             {
-                double value;
-                this.Table.Read(Register.D0, out value);
+                this.Table.Read(Register.D0, out double value);
                 return value;
             }
 
@@ -126,8 +113,7 @@ namespace Unicorn.ARM
         {
             get
             {
-                double value;
-                this.Table.Read(Register.D1, out value);
+                this.Table.Read(Register.D1, out double value);
                 return value;
             }
 
@@ -138,8 +124,7 @@ namespace Unicorn.ARM
         {
             get
             {
-                double value;
-                this.Table.Read(Register.D2, out value);
+                this.Table.Read(Register.D2, out double value);
                 return value;
             }
 
@@ -150,8 +135,7 @@ namespace Unicorn.ARM
         {
             get
             {
-                double value;
-                this.Table.Read(Register.D3, out value);
+                this.Table.Read(Register.D3, out double value);
                 return value;
             }
 
@@ -162,8 +146,7 @@ namespace Unicorn.ARM
         {
             get
             {
-                double value;
-                this.Table.Read(Register.D4, out value);
+                this.Table.Read(Register.D4, out double value);
                 return value;
             }
 
@@ -174,8 +157,7 @@ namespace Unicorn.ARM
         {
             get
             {
-                double value;
-                this.Table.Read(Register.D5, out value);
+                this.Table.Read(Register.D5, out double value);
                 return value;
             }
 
@@ -186,8 +168,7 @@ namespace Unicorn.ARM
         {
             get
             {
-                double value;
-                this.Table.Read(Register.D6, out value);
+                this.Table.Read(Register.D6, out double value);
                 return value;
             }
 
@@ -198,8 +179,7 @@ namespace Unicorn.ARM
         {
             get
             {
-                double value;
-                this.Table.Read(Register.D7, out value);
+                this.Table.Read(Register.D7, out double value);
                 return value;
             }
 
@@ -210,8 +190,7 @@ namespace Unicorn.ARM
         {
             get
             {
-                double value;
-                this.Table.Read(Register.D8, out value);
+                this.Table.Read(Register.D8, out double value);
                 return value;
             }
 
@@ -222,8 +201,7 @@ namespace Unicorn.ARM
         {
             get
             {
-                double value;
-                this.Table.Read(Register.D9, out value);
+                this.Table.Read(Register.D9, out double value);
                 return value;
             }
 
@@ -234,8 +212,7 @@ namespace Unicorn.ARM
         {
             get
             {
-                double value;
-                this.Table.Read(Register.D10, out value);
+                this.Table.Read(Register.D10, out double value);
                 return value;
             }
 
@@ -246,8 +223,7 @@ namespace Unicorn.ARM
         {
             get
             {
-                double value;
-                this.Table.Read(Register.D11, out value);
+                this.Table.Read(Register.D11, out double value);
                 return value;
             }
 
@@ -258,8 +234,7 @@ namespace Unicorn.ARM
         {
             get
             {
-                double value;
-                this.Table.Read(Register.D12, out value);
+                this.Table.Read(Register.D12, out double value);
                 return value;
             }
 
@@ -270,8 +245,7 @@ namespace Unicorn.ARM
         {
             get
             {
-                double value;
-                this.Table.Read(Register.D13, out value);
+                this.Table.Read(Register.D13, out double value);
                 return value;
             }
 
@@ -282,8 +256,7 @@ namespace Unicorn.ARM
         {
             get
             {
-                double value;
-                this.Table.Read(Register.D14, out value);
+                this.Table.Read(Register.D14, out double value);
                 return value;
             }
 
@@ -294,8 +267,7 @@ namespace Unicorn.ARM
         {
             get
             {
-                double value;
-                this.Table.Read(Register.D15, out value);
+                this.Table.Read(Register.D15, out double value);
                 return value;
             }
 
@@ -306,8 +278,7 @@ namespace Unicorn.ARM
         {
             get
             {
-                double value;
-                this.Table.Read(Register.D16, out value);
+                this.Table.Read(Register.D16, out double value);
                 return value;
             }
 
@@ -318,8 +289,7 @@ namespace Unicorn.ARM
         {
             get
             {
-                double value;
-                this.Table.Read(Register.D17, out value);
+                this.Table.Read(Register.D17, out double value);
                 return value;
             }
 
@@ -330,8 +300,7 @@ namespace Unicorn.ARM
         {
             get
             {
-                double value;
-                this.Table.Read(Register.D18, out value);
+                this.Table.Read(Register.D18, out double value);
                 return value;
             }
 
@@ -342,8 +311,7 @@ namespace Unicorn.ARM
         {
             get
             {
-                double value;
-                this.Table.Read(Register.D19, out value);
+                this.Table.Read(Register.D19, out double value);
                 return value;
             }
 
@@ -354,8 +322,7 @@ namespace Unicorn.ARM
         {
             get
             {
-                double value;
-                this.Table.Read(Register.D20, out value);
+                this.Table.Read(Register.D20, out double value);
                 return value;
             }
 
@@ -366,8 +333,7 @@ namespace Unicorn.ARM
         {
             get
             {
-                double value;
-                this.Table.Read(Register.D21, out value);
+                this.Table.Read(Register.D21, out double value);
                 return value;
             }
 
@@ -378,8 +344,7 @@ namespace Unicorn.ARM
         {
             get
             {
-                double value;
-                this.Table.Read(Register.D22, out value);
+                this.Table.Read(Register.D22, out double value);
                 return value;
             }
 
@@ -390,8 +355,7 @@ namespace Unicorn.ARM
         {
             get
             {
-                double value;
-                this.Table.Read(Register.D23, out value);
+                this.Table.Read(Register.D23, out double value);
                 return value;
             }
 
@@ -402,8 +366,7 @@ namespace Unicorn.ARM
         {
             get
             {
-                double value;
-                this.Table.Read(Register.D24, out value);
+                this.Table.Read(Register.D24, out double value);
                 return value;
             }
 
@@ -414,8 +377,7 @@ namespace Unicorn.ARM
         {
             get
             {
-                double value;
-                this.Table.Read(Register.D25, out value);
+                this.Table.Read(Register.D25, out double value);
                 return value;
             }
 
@@ -426,8 +388,7 @@ namespace Unicorn.ARM
         {
             get
             {
-                double value;
-                this.Table.Read(Register.D26, out value);
+                this.Table.Read(Register.D26, out double value);
                 return value;
             }
 
@@ -438,8 +399,7 @@ namespace Unicorn.ARM
         {
             get
             {
-                double value;
-                this.Table.Read(Register.D27, out value);
+                this.Table.Read(Register.D27, out double value);
                 return value;
             }
 
@@ -450,8 +410,7 @@ namespace Unicorn.ARM
         {
             get
             {
-                double value;
-                this.Table.Read(Register.D28, out value);
+                this.Table.Read(Register.D28, out double value);
                 return value;
             }
 
@@ -462,8 +421,7 @@ namespace Unicorn.ARM
         {
             get
             {
-                double value;
-                this.Table.Read(Register.D29, out value);
+                this.Table.Read(Register.D29, out double value);
                 return value;
             }
 
@@ -474,8 +432,7 @@ namespace Unicorn.ARM
         {
             get
             {
-                double value;
-                this.Table.Read(Register.D30, out value);
+                this.Table.Read(Register.D30, out double value);
                 return value;
             }
 
@@ -486,8 +443,7 @@ namespace Unicorn.ARM
         {
             get
             {
-                double value;
-                this.Table.Read(Register.D31, out value);
+                this.Table.Read(Register.D31, out double value);
                 return value;
             }
 
@@ -498,8 +454,7 @@ namespace Unicorn.ARM
         {
             get
             {
-                uint value;
-                this.Table.Read(Register.R0, out value);
+                this.Table.Read(Register.R0, out uint value);
                 return value;
             }
 
@@ -510,8 +465,7 @@ namespace Unicorn.ARM
         {
             get
             {
-                uint value;
-                this.Table.Read(Register.R1, out value);
+                this.Table.Read(Register.R1, out uint value);
                 return value;
             }
 
@@ -522,8 +476,7 @@ namespace Unicorn.ARM
         {
             get
             {
-                uint value;
-                this.Table.Read(Register.R2, out value);
+                this.Table.Read(Register.R2, out uint value);
                 return value;
             }
 
@@ -534,8 +487,7 @@ namespace Unicorn.ARM
         {
             get
             {
-                uint value;
-                this.Table.Read(Register.R3, out value);
+                this.Table.Read(Register.R3, out uint value);
                 return value;
             }
 
@@ -546,8 +498,7 @@ namespace Unicorn.ARM
         {
             get
             {
-                uint value;
-                this.Table.Read(Register.R4, out value);
+                this.Table.Read(Register.R4, out uint value);
                 return value;
             }
 
@@ -558,8 +509,7 @@ namespace Unicorn.ARM
         {
             get
             {
-                uint value;
-                this.Table.Read(Register.R5, out value);
+                this.Table.Read(Register.R5, out uint value);
                 return value;
             }
 
@@ -570,8 +520,7 @@ namespace Unicorn.ARM
         {
             get
             {
-                uint value;
-                this.Table.Read(Register.R6, out value);
+                this.Table.Read(Register.R6, out uint value);
                 return value;
             }
 
@@ -582,8 +531,7 @@ namespace Unicorn.ARM
         {
             get
             {
-                uint value;
-                this.Table.Read(Register.R7, out value);
+                this.Table.Read(Register.R7, out uint value);
                 return value;
             }
 
@@ -594,8 +542,7 @@ namespace Unicorn.ARM
         {
             get
             {
-                uint value;
-                this.Table.Read(Register.R8, out value);
+                this.Table.Read(Register.R8, out uint value);
                 return value;
             }
 
@@ -606,8 +553,7 @@ namespace Unicorn.ARM
         {
             get
             {
-                uint value;
-                this.Table.Read(Register.R9, out value);
+                this.Table.Read(Register.R9, out uint value);
                 return value;
             }
 
@@ -618,8 +564,7 @@ namespace Unicorn.ARM
         {
             get
             {
-                uint value;
-                this.Table.Read(Register.R10, out value);
+                this.Table.Read(Register.R10, out uint value);
                 return value;
             }
 
@@ -630,8 +575,7 @@ namespace Unicorn.ARM
         {
             get
             {
-                uint value;
-                this.Table.Read(Register.R11, out value);
+                this.Table.Read(Register.R11, out uint value);
                 return value;
             }
 
@@ -642,8 +586,7 @@ namespace Unicorn.ARM
         {
             get
             {
-                uint value;
-                this.Table.Read(Register.R12, out value);
+                this.Table.Read(Register.R12, out uint value);
                 return value;
             }
 
@@ -654,8 +597,7 @@ namespace Unicorn.ARM
         {
             get
             {
-                uint value;
-                this.Table.Read(Register.C1_C0_2, out value);
+                this.Table.Read(Register.C1_C0_2, out uint value);
                 return value;
             }
 
@@ -666,8 +608,7 @@ namespace Unicorn.ARM
         {
             get
             {
-                uint value;
-                this.Table.Read(Register.C13_C0_2, out value);
+                this.Table.Read(Register.C13_C0_2, out uint value);
                 return value;
             }
 
@@ -678,8 +619,7 @@ namespace Unicorn.ARM
         {
             get
             {
-                uint value;
-                this.Table.Read(Register.C13_C0_3, out value);
+                this.Table.Read(Register.C13_C0_3, out uint value);
                 return value;
             }
 
@@ -690,8 +630,7 @@ namespace Unicorn.ARM
         {
             get
             {
-                uint value;
-                this.Table.Read(Register.R13, out value);
+                this.Table.Read(Register.R13, out uint value);
                 return value;
             }
 
@@ -702,8 +641,7 @@ namespace Unicorn.ARM
         {
             get
             {
-                uint value;
-                this.Table.Read(Register.R14, out value);
+                this.Table.Read(Register.R14, out uint value);
                 return value;
             }
 
@@ -714,13 +652,11 @@ namespace Unicorn.ARM
         {
             get
             {
-                uint value;
-                this.Table.Read(Register.R15, out value);
+                this.Table.Read(Register.R15, out uint value);
                 return value;
             }
 
             set { this.Table.Write(Register.R15, ref value); }
         }
-        // ReSharper restore InconsistentNaming
     }
 }

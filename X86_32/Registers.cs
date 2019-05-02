@@ -28,13 +28,11 @@ namespace Unicorn.X86_32
         {
         }
 
-        // ReSharper disable InconsistentNaming
         public uint CR0
         {
             get
             {
-                uint value;
-                this.Table.Read(X86.Register.CR0, out value);
+                this.Table.Read(X86.Register.CR0, out uint value);
                 return value;
             }
 
@@ -45,8 +43,7 @@ namespace Unicorn.X86_32
         {
             get
             {
-                uint value;
-                this.Table.Read(X86.Register.CR1, out value);
+                this.Table.Read(X86.Register.CR1, out uint value);
                 return value;
             }
 
@@ -57,8 +54,7 @@ namespace Unicorn.X86_32
         {
             get
             {
-                uint value;
-                this.Table.Read(X86.Register.CR2, out value);
+                this.Table.Read(X86.Register.CR2, out uint value);
                 return value;
             }
 
@@ -69,8 +65,7 @@ namespace Unicorn.X86_32
         {
             get
             {
-                uint value;
-                this.Table.Read(X86.Register.CR3, out value);
+                this.Table.Read(X86.Register.CR3, out uint value);
                 return value;
             }
 
@@ -81,8 +76,7 @@ namespace Unicorn.X86_32
         {
             get
             {
-                uint value;
-                this.Table.Read(X86.Register.CR4, out value);
+                this.Table.Read(X86.Register.CR4, out uint value);
                 return value;
             }
 
@@ -93,8 +87,7 @@ namespace Unicorn.X86_32
         {
             get
             {
-                uint value;
-                this.Table.Read(X86.Register.DR0, out value);
+                this.Table.Read(X86.Register.DR0, out uint value);
                 return value;
             }
 
@@ -105,8 +98,7 @@ namespace Unicorn.X86_32
         {
             get
             {
-                uint value;
-                this.Table.Read(X86.Register.DR1, out value);
+                this.Table.Read(X86.Register.DR1, out uint value);
                 return value;
             }
 
@@ -117,8 +109,7 @@ namespace Unicorn.X86_32
         {
             get
             {
-                uint value;
-                this.Table.Read(X86.Register.DR2, out value);
+                this.Table.Read(X86.Register.DR2, out uint value);
                 return value;
             }
 
@@ -129,8 +120,7 @@ namespace Unicorn.X86_32
         {
             get
             {
-                uint value;
-                this.Table.Read(X86.Register.DR3, out value);
+                this.Table.Read(X86.Register.DR3, out uint value);
                 return value;
             }
 
@@ -141,8 +131,7 @@ namespace Unicorn.X86_32
         {
             get
             {
-                uint value;
-                this.Table.Read(X86.Register.DR4, out value);
+                this.Table.Read(X86.Register.DR4, out uint value);
                 return value;
             }
 
@@ -153,8 +142,7 @@ namespace Unicorn.X86_32
         {
             get
             {
-                uint value;
-                this.Table.Read(X86.Register.DR5, out value);
+                this.Table.Read(X86.Register.DR5, out uint value);
                 return value;
             }
 
@@ -165,8 +153,7 @@ namespace Unicorn.X86_32
         {
             get
             {
-                uint value;
-                this.Table.Read(X86.Register.DR6, out value);
+                this.Table.Read(X86.Register.DR6, out uint value);
                 return value;
             }
 
@@ -177,13 +164,11 @@ namespace Unicorn.X86_32
         {
             get
             {
-                uint value;
-                this.Table.Read(X86.Register.DR7, out value);
+                this.Table.Read(X86.Register.DR7, out uint value);
                 return value;
             }
 
             set { this.Table.Write(X86.Register.DR7, ref value); }
         }
-        // ReSharper restore InconsistentNaming
     }
 }

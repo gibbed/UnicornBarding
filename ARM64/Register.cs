@@ -24,7 +24,6 @@ namespace Unicorn.ARM64
     internal enum Register : int
     {
         Invalid = 0,
-        // ReSharper disable InconsistentNaming
         X29,
         X30,
         NZCV,
@@ -287,7 +286,7 @@ namespace Unicorn.ARM64
         V31,
 
         // pseudo registers
-        PC,            // program counter register
+        PC, // program counter register
 
         CPACR_EL1,
 
@@ -301,6 +300,5 @@ namespace Unicorn.ARM64
         IP1 = X17,
         FP = X29,
         LR = X30,
-        // ReSharper restore InconsistentNaming
     }
 }

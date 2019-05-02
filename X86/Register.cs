@@ -26,7 +26,6 @@ namespace Unicorn.X86
     internal enum Register : int
     {
         Invalid = 0,
-        // ReSharper disable InconsistentNaming
         AH,
         AL,
         AX,
@@ -533,6 +532,5 @@ namespace Unicorn.X86
         FPCW,
         FPTAG,
         MSR, // Model-Specific Register
-        // ReSharper restore InconsistentNaming
     }
 }

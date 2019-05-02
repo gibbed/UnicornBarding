@@ -29,7 +29,7 @@ namespace Unicorn
         private const string _Library = "unicorn";
         private const CallingConvention _CallingConvention = CallingConvention.Cdecl;
 
-        // ReSharper disable InconsistentNaming
+#pragma warning disable IDE1006 // Naming Styles
 
         [UnmanagedFunctionPointer(_CallingConvention)]
         public delegate void uc_cb_hookcode_t(IntPtr uc, ulong address, uint size, IntPtr user_data);
@@ -238,6 +238,6 @@ namespace Unicorn
         [DllImport(_Library, CallingConvention = _CallingConvention)]
         public static extern Error uc_context_restore(IntPtr uc, IntPtr context);
 
-        // ReSharper restore InconsistentNaming
+#pragma warning restore IDE1006 // Naming Styles
     }
 }
